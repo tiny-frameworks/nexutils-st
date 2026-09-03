@@ -12,8 +12,8 @@ NexRPCNodeIntegrationTest >> testBidirectionalRequestResponse [
     nodeA := NexRPCNode new.
     nodeB := NexRPCNode new.
 
-    nodeA delegate: TsfNexIOTestDelegate new.
-    nodeB delegate: TsfNexIOTestDelegate new.
+    nodeA delegate: NexRPCTestDelegate new.
+    nodeB delegate: NexRPCTestDelegate new.
 
     nodeA startOn: 40101.
     nodeB startOn: 40102.
@@ -55,8 +55,8 @@ NexRPCNodeIntegrationTest >> testNodeToNode [
     nodeA := NexRPCNode new.
     nodeB := NexRPCNode new.
 
-    nodeA delegate: TsfNexIOTestDelegate new.
-    nodeB delegate: TsfNexIOTestDelegate new.
+    nodeA delegate: NexRPCTestDelegate new.
+    nodeB delegate: NexRPCTestDelegate new.
 
     nodeA startOn: 40101.
     nodeB startOn: 40102.
@@ -100,8 +100,8 @@ NexRPCNodeIntegrationTest >> testSingleNodeToNode [
     nodeA := NexRPCNode new.
     nodeB := NexRPCNode new.
 
-    nodeA delegate: TsfNexIOTestDelegate new.
-    nodeB delegate: TsfNexIOTestDelegate new.
+    nodeA delegate: NexRPCTestDelegate new.
+    nodeB delegate: NexRPCTestDelegate new.
 
     nodeA startOn: 40101.
     nodeB startOn: 40102.

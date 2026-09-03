@@ -201,29 +201,6 @@ NexRPCSession >> sendMessage: aString [
     socket sendMessage: aString
 ]
 
-{ #category : 'private - communication' }
-NexRPCSession >> sendNotification: method params: params [
-
-    | payload jsonString |
-
-    payload := NexRPCProtocol
-        createNotification: method
-        params: params.
-
-    jsonString := NeoJSONWriter toString: payload.
-
-    socket ifNil: [
-        self error: 'Session has no socket'
-    ].
-
-    socket isConnected ifFalse: [
-        self error: 'Session socket is not connected'
-    ].
-
-    socket sendMessage: jsonString.
-
-]
-
 { #category : 'actions' }
 NexRPCSession >> sendSynchronous: method params: params [
     | id semaphore reqDict jsonResponse errorDict |
