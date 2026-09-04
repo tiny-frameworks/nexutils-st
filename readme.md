@@ -10,7 +10,7 @@ NexUtils is a collection of small, focused components that can be used independe
 
 ## Components
 
-### NexUtils-Core
+### NexUtils-NexLockFile
 
 Basic, reusable utilities.
 
@@ -20,7 +20,7 @@ Currently contains:
 
 The component is designed to be useful independently and is not tied to the other NexUtils packages.
 
-→ [NexUtils-Core](README-Core.md)
+→ [NexUtils-NexLockFile](readme-lockfile.md)
 
 ### NexUtils-Logging
 
@@ -28,7 +28,7 @@ A lightweight logging framework for Pharo applications.
 
 NexUtils-Logging uses `NexLockFile` where file-based synchronization is required.
 
-→ [NexUtils-Logging](README-Logging.md)
+→ [NexUtils-Logging](readme-logger.md)
 
 ### NexUtils-P2P
 
@@ -40,6 +40,7 @@ Peer-to-peer communication infrastructure for Pharo applications.
 
 The components have corresponding test packages:
 
+* `NexUtils-Core-Tests`
 * `NexUtils-Logging-Tests`
 * `NexUtils-P2P-Tests`
 
@@ -76,7 +77,7 @@ NexUtils
 │
 ├── readme.md
 ├── readme-lockfile.md
-├── README-Logging.md
+├── readme-logger.md
 └── README-P2P.md
 ```
 
