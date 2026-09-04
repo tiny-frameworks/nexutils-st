@@ -124,7 +124,8 @@ NexRPCClient >> dispatchIncoming: json [
     ].
 
     id ifNotNil: [
-        self handleResponse: json id: id
+        "self handleResponse: json id: id"
+        session handleResponse: json id: id
     ].
 ]
 
@@ -137,6 +138,7 @@ NexRPCClient >> handleNotification: json [
 { #category : 'actions' }
 NexRPCClient >> handleResponse: json id: id [
 
+	Transcript showCr: 'NexClient>>handleResponse: json id: id'.
 	session handleResponse: json id: id
 ]
 
