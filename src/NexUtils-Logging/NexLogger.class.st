@@ -1,4 +1,7 @@
 "
+Copyright 2026 Georg Hagn
+SPDX-License-Identifier: Apache-2.0
+
 I am the central logger component of the NexUtils-Logging framework. 
 
 I manage a collection of log appenders and control the current log level filtering. I support traditional string logging, lazy evaluation via block closures, and structured logging with payload key-value pairs (slog-style).

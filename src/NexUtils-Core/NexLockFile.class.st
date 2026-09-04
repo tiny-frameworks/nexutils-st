@@ -1,3 +1,12 @@
+"
+Copyright 2026 Georg Hagn
+SPDX-License-Identifier: Apache-2.0
+
+I am a cross-process file locking system for applications.
+
+I provide a simple, robust file-locking mechanism and I prevent race conditions and data corruption when multiple OS processes, background threads, or images need to access shared resources (such as log files, local caches, or SQLite databases)
+
+"
 Class {
 	#name : 'NexLockFile',
 	#superclass : 'Object',

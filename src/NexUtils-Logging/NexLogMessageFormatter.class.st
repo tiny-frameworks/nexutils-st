@@ -1,4 +1,7 @@
 "
+Copyright 2026 Georg Hagn
+SPDX-License-Identifier: Apache-2.0
+
 I format the message and payload to an applicable messageformat
 "
 Class {
