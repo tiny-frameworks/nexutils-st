@@ -43,7 +43,7 @@ BaselineOfNexUtils >> baseline: spec [
         spec package: 'NexUtils-Logging' with: [
             spec requires: #('NexUtils-Core') ].
 
-        spec package: 'NexUtils-Logging-Test' with: [
+        spec package: 'NexUtils-Logging-Tests' with: [
             spec requires: #(
                 'NexUtils-Core'
                 'NexUtils-Logging'
@@ -58,7 +58,7 @@ BaselineOfNexUtils >> baseline: spec [
                 'ZincHTTPComponents'
             ) ].
 
-        spec package: 'NexUtils-P2P-Test' with: [
+        spec package: 'NexUtils-P2P-Tests' with: [
             spec requires: #('NexUtils-P2P') ].
     ].
 ]
