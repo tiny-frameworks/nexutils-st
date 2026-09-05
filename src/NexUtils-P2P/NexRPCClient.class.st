@@ -81,7 +81,11 @@ NexRPCClient class >> newWith: anOptionsDict [
 { #category : 'initialize-release' }
 NexRPCClient >> close [
 
-    webSocket ifNotNil: [ webSocket close ].
+    webSocket ifNotNil: [
+        webSocket isConnected ifTrue: [
+            webSocket close
+        ].
+    ].
 ]
 
 { #category : 'public - line' }
@@ -138,7 +142,6 @@ NexRPCClient >> handleNotification: json [
 { #category : 'actions' }
 NexRPCClient >> handleResponse: json id: id [
 
-	Transcript showCr: 'NexClient>>handleResponse: json id: id'.
 	session handleResponse: json id: id
 ]
 

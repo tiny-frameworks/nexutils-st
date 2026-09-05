@@ -30,8 +30,8 @@ NexRPCDispatcher >> processRequest: json session: session [
     params := json at: 'params' ifAbsent: [ Dictionary new ].
     id := json at: 'id' ifAbsent: [ nil ].
 
-    selector := ('rpc', method capitalized, ':session:') asSymbol.
-
+    "selector := ('rpc', method capitalized, ':session:') asSymbol."
+    selector := self rpcSelectorFor: method.
     (delegate respondsTo: selector) ifFalse: [
         id ifNil: [ ^ nil ].
         ^ NexRPCProtocol
@@ -61,4 +61,14 @@ NexRPCDispatcher >> processRequest: json session: session [
             data: nil
             id: id
     ].
+]
+
+{ #category : 'helper' }
+NexRPCDispatcher >> rpcSelectorFor: method [
+    | parts selector |
+
+    parts := method findTokens: '.'.
+    selector := parts inject: 'rpc' into: [ :result :part |
+        result , part capitalized ].
+    ^ (selector , ':session:') asSymbol
 ]

@@ -220,7 +220,6 @@ NexRPCSession >> sendSynchronous: method params: params [
     ].
 
     jsonResponse := (pendingRequests removeKey: id) second.
-
     (jsonResponse includesKey: 'error') ifTrue: [
         errorDict := jsonResponse at: 'error'.
         NexRPCError new
