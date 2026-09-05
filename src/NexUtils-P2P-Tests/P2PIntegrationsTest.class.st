@@ -20,7 +20,7 @@ P2PIntegrationsTest >> setUp [
     "Server mit unserem Test-Delegate starten"
     port := 40000 + 100 atRandom.
     server := NexRPCServer new.
-    server delegate: NexRPCTestDelegate new.
+    server delegate: NexRPCAuthTestDelegate new.
     server startOn: port. 
     
     "Client erstellen"
@@ -52,8 +52,8 @@ P2PIntegrationsTest >> testBatchRequest [
     client connectTo: 'ws://localhost:', port asString, '/ws'.
     
     batch := OrderedCollection new.
-    batch add: 'echo' -> {'id' -> 1} asDictionary.
-    batch add: 'echo' -> {'id' -> 2} asDictionary.
+    batch add: 'system.echo' -> {'id' -> 1} asDictionary.
+    batch add: 'system.echo' -> {'id' -> 2} asDictionary.
     
     results := client sendBatch: batch.
     
@@ -152,7 +152,7 @@ P2PIntegrationsTest >> testSynchronousEcho [
     params := {'text' -> 'Pharo rocks'} asDictionary.
     
 	"Prüfung des Ergebnisses"
-    result := client sendSynchronous: 'echo' params: params.
+    result := client sendSynchronous: 'system.echo' params: params.
     
     "Dein Client gibt direkt (jsonResponse at: 'result') zurück, also prüfen wir das Dictionary"
     self assert: (result at: 'text') equals: 'Pharo rocks'.
@@ -174,10 +174,10 @@ P2PIntegrationsTest >> testTimeout [
     self 
         should: [ 
             "Wir rufen 'slow' auf, was im Delegate 2s dauert"
-            client sendSynchronous: 'slow' params: Dictionary new 
+            client sendSynchronous: 'test.slow' params: Dictionary new 
         ] raise: NexRPCTimeoutError withExceptionDo: [ :ex | 
             "Hier prüfen wir das Innenleben der Exception"
-            self assert: (ex messageText includesSubstring: 'slow').
+            self assert: (ex messageText includesSubstring: 'test.slow').
             
             "Optional: Prüfen ob params leer waren, wie gesendet"
             self assert: ex params isEmpty.

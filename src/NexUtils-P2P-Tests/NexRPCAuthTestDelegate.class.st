@@ -14,3 +14,12 @@ NexRPCAuthTestDelegate >> rpcMethodNotImplemented: methodName params: params ses
         messageText: 'Not found';
         signal.
 ]
+
+{ #category : 'rpc - method' }
+NexRPCAuthTestDelegate >> rpcTestSlow: params session: aSession [
+    "korresponding to JSON method: 'test.slow'"
+    
+    (Delay forSeconds: 3) wait.
+    ^ 'done'
+
+]
