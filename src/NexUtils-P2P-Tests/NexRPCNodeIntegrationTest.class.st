@@ -42,7 +42,7 @@ NexRPCNodeIntegrationTest >> testBidirectionalRequestResponse [
         self assert: (result at: 'text')
             equals: 'Hello back from B'.
 
-    ] ensure: [
+     ] ensure: [
         nodeA stop.
         nodeB stop.
     ].
