@@ -59,7 +59,7 @@ client := NexRPCClient new.
 client connectTo: 'ws://localhost:40001/ws'.
 
 result := client
-    sendSynchronous: 'echo'
+    sendSynchronous: 'system.echo'
     params: {'text' -> 'Hello P2P'} asDictionary.
 ```
 
@@ -84,12 +84,12 @@ result := client
 For example:
 
 ```text
-echo
+system.echo
   ↓
-rpcEcho:session:
+rpcSystemEcho:session:
 ```
 
-The delegate therefore provides the application-specific RPC methods.
+The delegate therefore provides the application-specific RPC methods. (see also [why dotted-methods](dotted-methods.md))
 
 ---
 
