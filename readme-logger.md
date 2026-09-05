@@ -1,5 +1,5 @@
-## NexLogger
-<sup>the *NexLogger package*, part of **TSF-nexutils**, member of the **tiny-frameworks** family</sup>
+## NexUtils-Logging
+<sup>the *NexUtils-Logging package*, part of **TSF-nexutils**, member of the **tiny-frameworks** family</sup>
 
 ---
 
@@ -106,6 +106,7 @@ asyncAppender stop.
 
 Unit-Tests for the component are located in the corresponding test package.
 
+---
 
 ## License
 See the [NexUtils repository](readme.md) for organizational information, licensing, contribution and security policies.

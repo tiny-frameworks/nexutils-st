@@ -1,14 +1,23 @@
+## NexUtils-Core
+<sup>the *NexUtils-Core package*, part of **TSF-nexutils**, member of the **tiny-frameworks** family</sup>
+
+---
+
+The package NexUtils-Core currently includes:
+
+* `NexLockFile`: a cross-process file locking for Pharo Smalltalk applications.
+
+---
+
 ## NexLockFile
-<sup>the *NexLockFile package*, part of **TSF-nexutils**, member of the **tiny-frameworks** family</sup>
+
+`NexLockFile` a cross-process file locking for Pharo Smalltalk applications.
+
+It provides a simple, robust file-locking mechanism for Pharo Smalltalk. It prevents race conditions and data corruption when multiple OS processes, background threads, or Pharo images need to access shared resources (such as log files, local caches, or SQLite databases).
 
 ---
 
-Cross-process file locking for Pharo Smalltalk applications.
-`NexLockFile` provides a simple, robust file-locking mechanism for Pharo Smalltalk. It prevents race conditions and data corruption when multiple OS processes, background threads, or Pharo images need to access shared resources (such as log files, local caches, or SQLite databases).
-
----
-
-## Features
+### Features
 
 * File-based coordination between processes
 * Configurable acquisition timeout
@@ -18,7 +27,7 @@ Cross-process file locking for Pharo Smalltalk applications.
 * Supports both `String` paths and `FileReference` objects
 * Convenient `critical:` API, executes a block while the corresponding lock file is held.
 
-### Limitations
+#### Limitations
 
 `NexLockFile` uses the presence of a lock file to coordinate access between processes.
 
@@ -28,7 +37,7 @@ Stale locks are detected based on the modification time of the lock file. Theref
 
 ---
 
-## Installation
+### Installation
 
 `NexLockFile` is part of the `NexUtils-Core` package suite. You can install it via Metacello in your Pharo Image:
 
@@ -48,9 +57,9 @@ Metacello new
 
 ---
 
-## Quick Start
+### Quick Start
 
-### Recommended Usage: critical:
+#### Recommended Usage: critical:
 
 The critical: block idiom ensures that the lock is guaranteed to be released after the block completes, even if an unhandled exception occurs inside the block.
 
@@ -69,7 +78,7 @@ lock critical: [
 The lock file is created while the block is executing and is removed afterwards, including when the block raises an exception.
 
 
-### Manual Lock Acquisition
+#### Manual Lock Acquisition
 
 If you need fine-grained control over when the lock is acquired and released:
 
@@ -88,9 +97,9 @@ lock := NexLockFile on: 'app.lock' asFileReference.
 
 ---
 
-## Advanced Configuration
+### Advanced Configuration
 
-### Timeout & Retry Interval
+#### Timeout & Retry Interval
 
 You can specify how long NexLockFile should try to acquire a lock before timing out, as well as the pause duration between retries:
 
@@ -120,7 +129,7 @@ The default lock acquisition timeout is **5 seconds**.
 
 If the lock cannot be acquired within the configured timeout, an `Error` is signaled.
 
-### Stale Lock Cleanup
+#### Stale Lock Cleanup
 
 If a process holding a lock crashes unexpectedly, a stale .lock file might remain on disk. You can configure a maximum lock age to automatically break stale locks:
 
@@ -139,7 +148,7 @@ lock staleTimeoutMilliseconds: 60000.
 ```
 ---
 
-### Retry Behaviour
+#### Retry Behaviour
 
 When a lock is already present, `NexLockFile` retries until the lock becomes available or the acquisition timeout is reached.
 
@@ -151,9 +160,9 @@ It can be adjusted with:
 lock retryDelayMilliseconds: 50.
 ```
 
-## API
+### API
 
-### The primary API
+#### The primary API
 
 | Message                   | Description                                          |
 | ------------------------- | ---------------------------------------------------- |
@@ -165,7 +174,7 @@ lock retryDelayMilliseconds: 50.
 | `isLocked`                | Test whether the lock currently exists               |
 | `isStale`                 | Test whether the lock has exceeded the stale timeout |
 
-### Defaults
+#### Defaults
 
 | Setting                  |    Default |
 | ------------------------ | ---------: |
@@ -175,7 +184,7 @@ lock retryDelayMilliseconds: 50.
 
 ---
 
-## Intended Use
+### Intended Use
 
 `NexLockFile` is deliberately small and independent.
 
@@ -184,7 +193,7 @@ Currently, `NexUtils-Logging` uses `NexLockFile` for process-level synchronizati
 
 
 
-## Testing
+### Testing
 
 Unit-Tests for the component are located in the corresponding test package.
 

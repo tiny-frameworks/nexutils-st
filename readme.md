@@ -1,40 +1,30 @@
 |[![Pharo Version](https://img.shields.io/badge/Pharo-12.0%2B-blue.svg)](https://pharo.org)|[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![Dependencies](https://img.shields.io/badge/dependencies-less-brightgreen.svg)](#)|
 |----|----|
-|![Tiny Level Logger Logo](logo-nexutils-st.png)| ***NexUtils***<br>Reusable and lightweight utilities for [Smalltalk](https://pharo.org/) projects. Part of the **Tiny Smalltalk Framework** suite.|
+|![Tiny Level Logger Logo](logo-nexutils-st.png)| ***TSF-nexutils***<br>A high-performance, modular collection of essential Smalltalk utilities designed for robust microservices and distributed peer-to-peer applications.<br><br>Part of the **Tiny Smalltalk Framework** suite.|
 
-<sup>***TSF*** stands for ***Tiny Smalltalk Framework*** — a collection of minimalist tools for robust applications.</sup>
+<sup>***TSF*** stands for ***Tiny Smalltalk Framework*** — minimalistic tools for robust applications</sup>
+
+---
 
 ## Overview
 
 NexUtils is a collection of small, focused components that can be used independently in Pharo applications and services.
 
+---
+
 ## Components
 
-### NexUtils-NexLockFile
+* [NexUtils-Core](readme-core.md)
+Basic, reusable utilities. Currently contains:
+    * **NexLockFile** — file-based locking for coordinating access between processes. The component is designed to be useful independently and is not tied to the other NexUtils packages.
 
-Basic, reusable utilities.
+* [NexUtils-Logging](readme-logger.md)
+A lightweight logging framework for Pharo applications. NexUtils-Logging uses `NexLockFile` where file-based synchronization is required.
 
-Currently contains:
-
-* **NexLockFile** — file-based locking for coordinating access between processes.
-
-The component is designed to be useful independently and is not tied to the other NexUtils packages.
-
-→ [NexUtils-NexLockFile](readme-lockfile.md)
-
-### NexUtils-Logging
-
-A lightweight logging framework for Pharo applications.
-
-NexUtils-Logging uses `NexLockFile` where file-based synchronization is required.
-
-→ [NexUtils-Logging](readme-logger.md)
-
-### NexUtils-P2P
-
+* [NexUtils-P2P](readme-p2p.md)
 Peer-to-peer communication infrastructure for Pharo applications.
 
-→ [NexUtils-P2P](README-P2P.md)
+---
 
 ## Tests
 
@@ -45,6 +35,8 @@ The components have corresponding test packages:
 * `NexUtils-P2P-Tests`
 
 Core component tests are currently part of the corresponding component's development.
+
+---
 
 ## Installation
 
@@ -64,6 +56,8 @@ Metacello new
 	load.
 ```
 
+---
+
 ## Repository Structure
 
 ```text
@@ -78,9 +72,8 @@ NexUtils
 ├── readme.md
 ├── readme-lockfile.md
 ├── readme-logger.md
-└── README-P2P.md
+└── readme-p2p.md
 ```
-
 
 ---
 
@@ -101,9 +94,4 @@ For inquiries, architectural discussions, or security issues, please contact:
 📧 **georghagn [at] tiny-frameworks.io**
 
 ---
-
-
-## License
-
-See the individual repository files for license information.
 
