@@ -1,3 +1,8 @@
+
+## Why should we use dotted methods
+
+---
+ 
 You have made a very astute observation! You are absolutely right: In the world of pure Smalltalk, periods in method names (`auth.login`) are syntactically not allowed and completely unusual.
 
 However, there are **three important reasons** why we chose dot notation in the **JSON-RPC context**:
