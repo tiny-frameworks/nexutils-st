@@ -133,19 +133,6 @@ NexRPCSession >> isConnected [
     ^ socket notNil and: [ socket isConnected ]
 ]
 
-{ #category : 'accessing' }
-NexRPCSession >> mutex [ 
-
-    ^ mutex
-
-]
-
-{ #category : 'accessing' }
-NexRPCSession >> pendingRequests [
-
-    ^ pendingRequests.
-]
-
 { #category : 'actions' }
 NexRPCSession >> registerRequest: method params: params [
     | id semaphore |
@@ -164,12 +151,6 @@ NexRPCSession >> registerRequest: method params: params [
         createRequest: method
         params: params
         id: id
-]
-
-{ #category : 'accessing' }
-NexRPCSession >> requestCounter [
-
-    ^ requestCounter.
 ]
 
 { #category : 'accessing' }

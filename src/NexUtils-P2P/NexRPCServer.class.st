@@ -320,18 +320,6 @@ NexRPCServer >> sessions [
 ]
 
 { #category : 'actions' }
-NexRPCServer >> start [
-
-    port ifNil: [port := self class defaultPort ].
-
-    server := ZnServer startDefaultOn: port.
-    server delegate map: 'ws' to: (ZnWebSocketDelegate handler: [ :ws |
-        self handleConnection: ws
-    ]).
-    self startHeartbeat.
-]
-
-{ #category : 'actions' }
 NexRPCServer >> startHeartbeat [
 
 	self stopHeartbeat. "Make sure it's not running twice."

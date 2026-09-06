@@ -1,3 +1,22 @@
+"
+Copyright 2026 Georg Hagn
+SPDX-License-Identifier: Apache-2.0
+
+I represent a P2P node in the NexUtils-P2P framework.
+
+I combine the RPC communication endpoint with the application delegate  that
+handles incoming RPC requests. * **My intention is to communicate with each 
+other as peers; there is no inherent client/server hierarchy between connected nodes** *.
+
+I manage the underlying RPC sessions and provide the common infrastructure 
+required for establishing connections and dispatching JSON-RPC requests to its delegate.
+
+Application-specific behavior is implemented by a delegate rather than by subclassing
+me itself. This keeps the networking and RPC infrastructure separate from application logic.
+
+See: NexRPCBaseDelegate, NexRPCSession, NexRPCDispatcher
+
+"
 Class {
 	#name : 'NexRPCNode',
 	#superclass : 'Object',
@@ -11,18 +30,6 @@ Class {
 	#package : 'NexUtils-P2P',
 	#tag : 'Core'
 }
-
-{ #category : 'accessing' }
-NexRPCNode >> clients [
-
-	^ clients
-]
-
-{ #category : 'accessing' }
-NexRPCNode >> clients: anObject [
-
-	clients := anObject
-]
 
 { #category : 'public - line' }
 NexRPCNode >> connectTo: urlString [
@@ -79,17 +86,9 @@ NexRPCNode >> server [
 ]
 
 { #category : 'accessing' }
-NexRPCNode >> server: anObject [
+NexRPCNode >> server: aServer [
 
-	server := anObject
-]
-
-{ #category : 'accessing' }
-NexRPCNode >> start [
-
-    server := NexRPCServer new.
-    server delegate: delegate.
-    server start.
+	server := aServer 
 ]
 
 { #category : 'public' }

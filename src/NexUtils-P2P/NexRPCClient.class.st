@@ -66,16 +66,7 @@ NexRPCClient class >> defaultStreamTimeOut [
 { #category : 'accessing' }
 NexRPCClient class >> defaultUserAgent [
 
-    ^ 'TsfNexIO-Client/1.0'
-]
-
-{ #category : 'instance creation' }
-NexRPCClient class >> newWith: anOptionsDict [
-
-    ^ (self new)
-	     streamTimeOut: self class defaultStreamTimeOut;
-        requestTimeout: self class defaultRequestTimeout;
-		yourself. 
+    ^ 'NexRPCClient/1.0'
 ]
 
 { #category : 'initialize-release' }
@@ -128,7 +119,6 @@ NexRPCClient >> dispatchIncoming: json [
     ].
 
     id ifNotNil: [
-        "self handleResponse: json id: id"
         session handleResponse: json id: id
     ].
 ]
@@ -137,12 +127,6 @@ NexRPCClient >> dispatchIncoming: json [
 NexRPCClient >> handleNotification: json [
 
     notificationHandler ifNotNil: [ notificationHandler value: json ].
-]
-
-{ #category : 'actions' }
-NexRPCClient >> handleResponse: json id: id [
-
-	session handleResponse: json id: id
 ]
 
 { #category : 'initialization' }
@@ -257,12 +241,6 @@ NexRPCClient >> sendSynchronous: method params: params [
 NexRPCClient >> session [ 
 
     ^ session
-]
-
-{ #category : 'accessing' }
-NexRPCClient >> session: aSession [
-
-	session := aSession
 ]
 
 { #category : 'accessing' }
