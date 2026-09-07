@@ -1,6 +1,6 @@
 |[![Pharo Version](https://img.shields.io/badge/Pharo-12.0%2B-blue.svg)](https://pharo.org)|[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![Dependencies](https://img.shields.io/badge/dependencies-less-brightgreen.svg)](#)|
 |----|----|
-|![Tiny Level Logger Logo](logo-nexutils-st.png)| ***TSF-nexutils***<br>A high-performance, modular collection of essential Smalltalk utilities designed for robust microservices and distributed peer-to-peer applications.<br><br>Part of the **Tiny Smalltalk Framework** suite.|
+|![Tiny Level Logger Logo](logo-nexutils-st.png)| ***TSF-nexutils***<br>Modular, reusable Smalltalk utilities and libraries for Pharo applications and services |
 
 <sup>***TSF*** stands for ***Tiny Smalltalk Framework*** — minimalistic tools for robust applications</sup>
 
@@ -8,7 +8,8 @@
 
 ## Overview
 
-NexUtils is a collection of small, focused components that can be used independently in Pharo applications and services.
+NexUtils is a collection of small, focused, reusable components for Pharo applications and services. Its modules provide common building blocks for logging, JSON-RPC, peer-to-peer communication, and other application infrastructure.
+
 
 ---
 
