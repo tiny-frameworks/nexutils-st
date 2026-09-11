@@ -1,6 +1,6 @@
 |[![Pharo Version](https://img.shields.io/badge/Pharo-12.0%2B-blue.svg)](https://pharo.org)|[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![Dependencies](https://img.shields.io/badge/dependencies-less-brightgreen.svg)](#)|
 |----|----|
-|![Tiny Level Logger Logo](logo-tsf.png)| ***TSF-nexutils***<br>Modular, reusable Smalltalk utilities and libraries for Pharo applications and services |
+|![Tiny Level Logger Logo](nexutils.png)| ***TSF-nexutils***<br>Modular, reusable Smalltalk utilities and libraries for Pharo applications and services |
 
 <sup>***TSF*** stands for ***Tiny Smalltalk Framework*** — minimalistic tools for robust applications</sup>
 
