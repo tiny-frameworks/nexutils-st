@@ -6,6 +6,22 @@
 
 ---
 
+### Repository
+
+This project is developed and maintained on Codeberg.
+
+**Canonical repository:**
+
+> https://codeberg.org/tiny-frameworks/nexutils-st
+
+GitHub is an automated mirror of the Codeberg repository:
+
+**GitHub mirror:**
+
+> https://github.com/tiny-frameworks/nexutils-st
+
+---
+
 ## Overview
 
 NexUtils is a collection of small, focused, reusable components for Pharo applications and services. Its modules provide common building blocks for logging, JSON-RPC, peer-to-peer communication, and other application infrastructure.
